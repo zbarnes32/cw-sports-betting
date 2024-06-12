@@ -3,3 +3,8 @@
     background-size: cover;
     background-position: center;
 }
+
+.available-players {
+    display: flex;
+    justify-content: space-around;
+}

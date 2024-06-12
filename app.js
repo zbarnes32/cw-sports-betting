@@ -132,7 +132,21 @@ function drawPlayers() {
     console.log('Did this work?', playersEmojis)
 }
 
-function userBalance() {
-    // Shows the user's current balance
-    
+function getBalance() {
+    // Calculates the user's current balance
+    let balance = 100
+    return balance
+
 }
+
+function drawBalance() {
+    const currentBalance = getBalance();
+    // console.log('did it work?', currentBalance)
+    const balanceElem = document.getElementById("balance")
+    balanceElem.innerText = ` $${currentBalance}`
+}
+
+//ANCHOR drawing to page
+
+drawPlayers();
+drawBalance();
