@@ -20,40 +20,37 @@
         <div class="row">
             <div class="col-12">
                 <h2>Place Your Bets!</h2>
-                <h3 id="bank"></h3>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid">
+    <section class="container mb-3">
         <div class="row">
-            <div class="col-12 bg-primary">
+            <div class="col-12">
                 <div>
-                    <h3 class="text-center">Balance:<span id="balance"></span> </h3>
+                    <h3 class="text-center text-light">Balance:<span id="balance"></span></h3>
                 </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid">
+    <section class="container mb-5">
         <div class="row">
-            <div class="col-12 bg-danger available-players">
+            <div class="col-12 available-players">
                 <h2>Available Players</h2>
                 <div id="players">
                 </div>
-                <button class="bg-success fw-bold p-2 rounded" onclick="draftPlayersToTeams()">Start Draft</button>
+                <button class="bg-warning fw-bold p-2 rounded" onclick="draftPlayersToTeams()">Start Draft</button>
             </div>
         </div>
     </section>
 
     <section class="container-fluid">
         <div class="row">
-            <div class="col-6 bg-warning">
+            <div class="col-6 text-light text-center bg-color-main">
                 <h2>Team 1</h2>
-                <div id="teamOne">
-                    <p>Team One goes here</p>
-                </div>
+                <div id="teamOne"></div>
                 <div id="bets">
                     <button>$5</button>
                     <button>$25</button>
@@ -61,11 +58,9 @@
                     <button>All in!</button>
                 </div>
             </div>
-            <div class="col-6 bg-success">
+            <div class="col-6 text-light text-center bg-color-main">
                 <h2>Team 2</h2>
-                <div id="teamTwo">
-                    <p>Team Two goes here</p>
-                </div>
+                <div id="teamTwo"></div>
                 <div id="bets">
                     <button>$5</button>
                     <button>$25</button>

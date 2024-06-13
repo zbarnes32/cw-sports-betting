@@ -1,4 +1,14 @@
 let bank = 100
+let balance = 100
+
+const winFive = 5
+const winTwentyFive = 25
+const winOneHundred = 100
+let winBank = 0
+const lossFive = -5
+const lossTwentyFive = -25
+const lossOneHundred = -100
+let lossBank = 0
 
 const players = [
     {
@@ -136,39 +146,41 @@ function getBalance() {
     // Calculates the user's current balance
     let balance = 100
     return balance
-
 }
 
 function drawBalance() {
-    const currentBalance = getBalance();
+    const currentBalance = balance;
     // console.log('did it work?', currentBalance)
     const balanceElem = document.getElementById("balance")
     balanceElem.innerText = ` $${currentBalance.toFixed(2)}`
+}
+
+function declareTeams() {
+    for (let i = 0; i < players.length; i++) {
+        let randomTeam = Math.ceil(Math.random() * 2)
+        const player = players[i]
+        player.teamNumber = randomTeam
+    }
 }
 
 function draftPlayersToTeams() {
     // Will split from the players from the players array to each team
     // Each player needs to be assigned to either team 1 or team 2
     // Create a math function that would randomly choose 1 or 2
-    for (let i = 0; i < players.length; i++) {
-        let randomTeam = Math.ceil(Math.random() * 2)
-        const player = players[i]
-        player.teamNumber = randomTeam
-        // console.log('did it work', player)
-    }
-
+   
+    declareTeams()
     // Move players to team's section
-    let teamOne = players.filter((player) => player.teamNumber == 1)
-    let teamTwo = players.filter((player) => player.teamNumber == 2)
-    console.log(`team one`, teamOne)
-    console.log(`team two`, teamTwo)
+    const teamOne = players.filter((player) => player.teamNumber == 1)
+    const teamTwo = players.filter((player) => player.teamNumber == 2)
+    // console.log(`team one`, teamOne)
+    // console.log(`team two`, teamTwo)
 
     let playerEmoji = ''
     let playerEmojiTwo = ''
     teamOne.forEach((player) => playerEmoji += `<span class="fs-1">${player.emoji}</span>`)
     teamTwo.forEach((player) => playerEmojiTwo += `<span class="fs-1">${player.emoji}</span>`)
-    console.log('test', playerEmoji)
-    console.log('test2', playerEmojiTwo)
+    // console.log('test', playerEmoji)
+    // console.log('test2', playerEmojiTwo)
 
     const teamOneElem = document.getElementById('teamOne')
     const teamTwoElem = document.getElementById('teamTwo')
@@ -182,19 +194,44 @@ function draftPlayersToTeams() {
     // teamTwoElem.innerHTML = `<span>${teamTwo.players.emoji}</span>`
 
     drawPlayers()
+
     // console.log('Team', teamChoice)
     // players.forEach((player) => player.teamNumber = teamChoice);
     // console.log(players)
 }
 
 function addScores () {
-    let teamOne = players.filter((player) => player.teamNumber == 1)
-    let teamTwo = players.filter((player) => player.teamNumber == 2)
+    const teamOne = players.filter((player) => player.teamNumber == 1)
+    const teamTwo = players.filter((player) => player.teamNumber == 2)
+   // console.log("testOne", teamOne)
+   // console.log("testTwo", teamTwo)
+
+    let teamOneScore = 0
+    let teamTwoScore = 0
+    
+    teamOne.forEach((player) => {
+        teamOneScore += player.skill
+    })
 
     
+    teamTwo.forEach((player) =>  {
+        teamTwoScore += player.skill
+    })
+    
+    // console.log("testOne", teamOneScore)
+    // console.log("testTwo", teamTwoScore)
+    if (teamOneScore > teamTwoScore) {
+        console.log('team one wins')
+    } else if (teamOneScore < teamTwoScore) {
+        console.log('team two wins')
+        } else {
+            console.log('tie')
+        }
 }
+
 
 //ANCHOR drawing to page
 
 drawPlayers();
 drawBalance();
+
