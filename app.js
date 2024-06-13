@@ -234,6 +234,8 @@ function placeBet() {
     // Declare winning condition
     // addScores()
 
+    // NOTE Need to separate my addScores() into two separate functions, one for team one and another for team two. By doing this, it would allow me to correctly assign my betting buttons for team one and team two . 
+
     
 }
 //ANCHOR drawing to page
