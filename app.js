@@ -229,7 +229,13 @@ function addScores () {
         }
 }
 
+function placeBet() {
+    // When the user places a bet, it is determined that the user wins (or loses) the dollar amount wagered
+    // Declare winning condition
+    // addScores()
 
+    
+}
 //ANCHOR drawing to page
 
 drawPlayers();
