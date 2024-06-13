@@ -129,7 +129,7 @@ function drawPlayers() {
     players.forEach((player) => playersEmojis += `<span class="fs-1">${player.emoji}</span>`)
     const playersElem = document.getElementById("players")
     playersElem.innerHTML = playersEmojis;
-     console.log('Did this work?', playersEmojis)
+     // console.log('Did this work?', playersEmojis)
 }
 
 function getBalance() {
@@ -164,14 +164,17 @@ function draftPlayersToTeams() {
     console.log(`team two`, teamTwo)
 
     let playerEmoji = ''
-    teamOne.forEach((player) => playerEmoji += `<span>${player.emoji}</span>`)
-    teamTwo.forEach((player) => playerEmoji += `<span>${player.emoji}</span>`)
+    let playerEmojiTwo = ''
+    teamOne.forEach((player) => playerEmoji += `<span class="fs-1">${player.emoji}</span>`)
+    teamTwo.forEach((player) => playerEmojiTwo += `<span class="fs-1">${player.emoji}</span>`)
+    console.log('test', playerEmoji)
+    console.log('test2', playerEmojiTwo)
 
     const teamOneElem = document.getElementById('teamOne')
     const teamTwoElem = document.getElementById('teamTwo')
 
     teamOneElem.innerHTML = playerEmoji
-    teamTwoElem.innerHTML = playerEmoji
+    teamTwoElem.innerHTML = playerEmojiTwo
 
 
 
@@ -182,6 +185,13 @@ function draftPlayersToTeams() {
     // console.log('Team', teamChoice)
     // players.forEach((player) => player.teamNumber = teamChoice);
     // console.log(players)
+}
+
+function addScores () {
+    let teamOne = players.filter((player) => player.teamNumber == 1)
+    let teamTwo = players.filter((player) => player.teamNumber == 2)
+
+    
 }
 
 //ANCHOR drawing to page
